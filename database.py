@@ -16,4 +16,4 @@ try:
     client.server_info()
     print('Базага кошулду')
 except Exception as e:
-    print(f'Базага кошулганда ошибкаб {e}')
+    print(f'Базага кошулганда ошибка {e}')

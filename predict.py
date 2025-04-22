@@ -6,7 +6,7 @@ from config import config
 async def get_prediction(image_bytes: bytes):
     try:
         print('roboflow кошулду')
-        url = config.MONGODB_URL
+        url = config.ROBOFLOW_URL
         files ={
             'file': ('image.jpg', io.BytesIO(image_bytes), 'image/jpg')
         }
@@ -21,7 +21,7 @@ async def get_prediction(image_bytes: bytes):
             'answer': response.json()['inference_id'],
             'result_tame': response.json()['time'],
             'class': response.json()['predictions'][0]['class'],
-            'confidence': round(response.json()['predictions'][0]['confidence']*100,1)
+            'confidence': round(response.json()['predictions'][0]['confidence'] * 100,1)
                 }
 
     except Exception as e:
